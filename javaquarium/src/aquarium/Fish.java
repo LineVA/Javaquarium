@@ -5,15 +5,18 @@
  */
 package aquarium;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author doyenm
  */
-public abstract class Fish extends Inhabitant{
+public abstract class Fish extends Inhabitant {
+
     private String name;
     private Sex sex;
-    
-    public Fish(String name, Sex sex){
+
+    public Fish(String name, Sex sex) {
         this.name = name;
         this.sex = sex;
     }
@@ -34,8 +37,14 @@ public abstract class Fish extends Inhabitant{
         this.sex = sex;
     }
 
-    public abstract boolean eat(Inhabitant eatable);
-    
+    public abstract Inhabitant eat(ArrayList<Inhabitant> inList, ArrayList<Inhabitant> dying);
+
     public abstract String toString();
-    
+
+    public abstract void die();
+
+    public abstract boolean isVegan();
+
+    public abstract boolean isCarnivorous();
+
 }

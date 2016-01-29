@@ -19,12 +19,15 @@ public class Javaquarium {
         Fish fish1 = new VeganFish("Coco", Sex.MALE);
         Fish fish2 = new CarnivorousFish("Miam", Sex.FEMALE);
         Seaweed weed = new Seaweed();
-        
+
         aquarium.addFish(fish1);
         aquarium.addFish(fish2);
         aquarium.addSeaweed(weed);
-        
+
         aquarium.visualize();
+        aquarium.meal();
+        aquarium.visualize();
+
     }
-    
+
 }

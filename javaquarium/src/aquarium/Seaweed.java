@@ -10,12 +10,23 @@ package aquarium;
  * @author doyenm
  */
 public class Seaweed extends Inhabitant {
+    
+    int id;
+    
     public Seaweed(){
-        
+        //this.id = super.seaweedsList.size();
     }
     
     @Override
     public String toString(){
         return "A seaweed";
     }
+
+    @Override
+    public void die() {
+        System.out.println("A weed is dying.");
+        super.die(this);
+    }
+    
+    
 }

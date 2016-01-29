@@ -9,7 +9,7 @@ package aquarium;
  *
  * @author doyenm
  */
-public abstract class Inhabitant extends Aquarium {
+public abstract class Inhabitant extends Aquarium{
     
-    
+    public abstract void die();
 }
