@@ -15,8 +15,7 @@ public class _001_emptyAquarium {
     public static void main(String[] args) {
         Aquarium aquarium = new Aquarium();
 
-        aquarium.visualize();
-        aquarium.meal();
+     aquarium.oneTurn();
     }
     
 }

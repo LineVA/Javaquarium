@@ -23,9 +23,8 @@ public class _003_carnivorousAquarium {
         CarnivorousFish carni2 = new CarnivorousFish("Carni2", Sex.MALE);
         aquarium.addFish(carni2);
 
-        aquarium.visualize();
-        aquarium.meal();
-        aquarium.visualize();
+           aquarium.oneTurn();
+
     }
 
 }

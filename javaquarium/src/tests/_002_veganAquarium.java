@@ -21,9 +21,8 @@ public class _002_veganAquarium {
         VeganFish vegan = new VeganFish("Vegan", Sex.FEMALE);
         aquarium.addFish(vegan);
 
-        aquarium.visualize();
-        aquarium.meal();
-        aquarium.visualize();
+            aquarium.oneTurn();
+
     }
 
 }

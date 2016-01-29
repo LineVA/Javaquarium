@@ -25,8 +25,7 @@ public class Javaquarium {
         aquarium.addSeaweed(weed);
 
         aquarium.visualize();
-        aquarium.meal();
-        aquarium.visualize();
+        aquarium.oneTurn();
 
     }
 
