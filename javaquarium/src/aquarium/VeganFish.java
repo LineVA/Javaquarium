@@ -20,7 +20,7 @@ public class VeganFish extends Fish {
     @Override
     public String toString() {
         return "A fish named " + super.getName() + ", a " + super.getSex()
-                + " and vegetarian.";
+                + ", vegetarian and has "+ this.getPv() + " PV.";
     }
 
     public Inhabitant eat(ArrayList<Inhabitant> inList, ArrayList<Inhabitant> dying) {

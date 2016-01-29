@@ -17,6 +17,7 @@ public abstract class Fish extends Inhabitant {
     private Sex sex;
 
     public Fish(String name, Sex sex) {
+        super();
         this.name = name;
         this.sex = sex;
     }
@@ -46,5 +47,9 @@ public abstract class Fish extends Inhabitant {
     public abstract boolean isVegan();
 
     public abstract boolean isCarnivorous();
+    
+    public void newTurn(){
+            this.setPv(this.getPv() - 1);
+    }
 
 }

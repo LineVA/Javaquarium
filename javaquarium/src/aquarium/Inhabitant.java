@@ -11,5 +11,19 @@ package aquarium;
  */
 public abstract class Inhabitant extends Aquarium{
     
-    public abstract void die();
+   private int pv;
+   
+   public Inhabitant(){
+       this.pv = 10;
+   }
+    
+    public int getPv() {
+        return pv;
+    }
+
+    public void setPv(int pv) {
+        this.pv = pv;
+    }
+    
+    public abstract void newTurn(); 
 }

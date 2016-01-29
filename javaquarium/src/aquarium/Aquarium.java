@@ -18,12 +18,15 @@ public class Aquarium {
     private ArrayList<Inhabitant> fishesList;
     private ArrayList<Inhabitant> seaweedsList;
     private ArrayList<Inhabitant> dyingFishesList;
+    private ArrayList<Inhabitant> dyingSeaweedsList;
+
     private Random random;
 
     public Aquarium() {
         fishesList = new ArrayList<>();
         seaweedsList = new ArrayList<>();
         dyingFishesList = new ArrayList<>();
+        dyingSeaweedsList = new ArrayList<>();
         random = new Random();
 
     }
@@ -51,8 +54,11 @@ public class Aquarium {
         }
     }
 
-    public void die(ArrayList<Inhabitant> dying) {
-        fishesList.removeAll(dying);
+    public void die() {
+        fishesList.removeAll(dyingFishesList);
+        dyingFishesList.clear();
+        seaweedsList.removeAll(dyingSeaweedsList);
+        this.dyingSeaweedsList.clear();
     }
 
     public boolean isDying(Inhabitant fish) {
@@ -73,15 +79,15 @@ public class Aquarium {
 
     public void eatCarnivorous(Fish fish) {
         Fish eatable = (Fish) fish.eat(fishesList, dyingFishesList);
-            if (eatable != null) {
-                System.out.println("The fish that " + fish.getName()
-                        + " wants to eat is " + eatable.getName());
-                // die(eatable);
-                dyingFishesList.add(eatable);
-            } else {
-                System.out.println(fish.getName()
-                        + " has nothing to eat.");
-            }
+        if (eatable != null) {
+            System.out.println("The fish that " + fish.getName()
+                    + " wants to eat is " + eatable.getName());
+            // die(eatable);
+            dyingFishesList.add(eatable);
+        } else {
+            System.out.println(fish.getName()
+                    + " has nothing to eat.");
+        }
     }
 
     private void meal() {
@@ -98,11 +104,10 @@ public class Aquarium {
                 }
             }
         }
-        die(dyingFishesList);
-        dyingFishesList.clear();
+        die();
     }
-    
-     public void visualize() {
+
+    public void visualize() {
         System.out.println("VISUALIZATION : ");
         Iterator itFishes = fishesList.iterator();
         Fish fish;
@@ -111,10 +116,40 @@ public class Aquarium {
             fish = (Fish) itFishes.next();
             System.out.println(fish.toString());
         }
-        System.out.println("Number of seaweeds : " + seaweedsList.size());
+        System.out.println("Number of seaweeds : " + seaweedsList.size() + " : ");
+        Iterator itWeeds = seaweedsList.iterator();
+        Seaweed weed;
+        while (itWeeds.hasNext()) {
+            weed = (Seaweed) itWeeds.next();
+            System.out.println(weed.toString());
+        }
     }
 
-    public void oneTurn(){
+    public void beginNewTurn() {
+        Iterator itFishes = fishesList.iterator();
+        Fish fish;
+        while (itFishes.hasNext()) {
+            fish = (Fish) itFishes.next();
+            fish.newTurn();
+            if (fish.getPv() < 1) {
+                itFishes.remove();
+            }
+        }
+        Iterator itWeeds = seaweedsList.iterator();
+        Seaweed weed;
+        while (itWeeds.hasNext()) {
+            weed = (Seaweed) itWeeds.next();
+            weed.newTurn();
+            if (weed.getPv() < 1) {
+                itWeeds.remove();
+            }
+        }
+    }
+
+    public void oneTurn() {
+        beginNewTurn();    
+        beginNewTurn();
+        beginNewTurn();
         meal();
         visualize();
     }

@@ -20,7 +20,7 @@ public class CarnivorousFish extends Fish {
     @Override
     public String toString() {
         return "A fish named " + super.getName() + ", a " + super.getSex()
-                + " and carnivorious.";
+                + ", carnivorious and has "+ this.getPv() + " PV.";
     }
 
     public boolean equas(Fish fish){
