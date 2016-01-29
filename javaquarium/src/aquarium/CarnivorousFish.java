@@ -36,9 +36,10 @@ public class CarnivorousFish extends Fish {
         } else {
             int iEatable = super.getRandom().nextInt(inList.size());
             Inhabitant eatable = inList.get(iEatable);
-            if(eatable.equals(this)){
+            if(eatable.equals(this) || eatable.isDying()){
                 // Because of a bad choice, the fish tries to eat itself
                 // So it needs to choose a new meal
+                // OR it chooses an already dying fish
                 return eat(inList, dying);
             } else {
                 eatable.eaten();

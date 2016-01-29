@@ -27,6 +27,10 @@ public abstract class Inhabitant extends Aquarium{
         this.pv = pv;
     }
     
+    public boolean isDying(){
+        return (this.pv<1) || this.age>19;
+    }
+    
     public abstract void newTurn();
     
     public abstract void eaten();

@@ -18,13 +18,16 @@ public class Javaquarium {
         Aquarium aquarium = new Aquarium();
         Fish fish1 = new VeganFish("Coco", Sex.MALE, 0);
         Fish fish2 = new CarnivorousFish("Miam", Sex.FEMALE, 0);
+        Fish fish3 = new CarnivorousFish("Moum", Sex.FEMALE, 0);
+
         Seaweed weed = new Seaweed(0);
 
         aquarium.addFish(fish1);
         aquarium.addFish(fish2);
-        aquarium.addSeaweed(weed);
+        aquarium.addFish(fish3);
 
-        Play play = new Play(aquarium, 10);
+         aquarium.addSeaweed(weed);
+        Play play = new Play(aquarium, 30);
 
     }
 

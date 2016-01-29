@@ -32,7 +32,9 @@ public class Play {
         Fish fish;
         while (itFishes.hasNext()) {
             fish = (Fish) itFishes.next();
-            if (!this.aquarium.isDying(fish) && fish.getPv() < 6) {
+            // Before eating, we must cj=heck if it is not dying and if it is 
+            // hungry
+            if (!fish.isDying() && fish.isHungry()) {
                 if (fish.isVegan()) {
                     this.aquarium.eatVegan(fish);
                 } else if (fish.isCarnivorous()) {

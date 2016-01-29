@@ -77,12 +77,9 @@ public class Aquarium {
 
     private void die(Inhabitant in) {
         if (in instanceof Seaweed) {
-            Iterator it = this.seaweedsList.iterator();
-            Seaweed weed;
-            while (it.hasNext()) {
-                weed = (Seaweed) it.next();
-                it.remove();
-            }
+            dyingSeaweedsList.add(in);
+        } else if(in instanceof Fish){
+            dyingFishesList.add(in);
         }
     }
 
@@ -98,11 +95,11 @@ public class Aquarium {
     }
 
     public void eatVegan(Fish fish) {
-        Inhabitant eatable = fish.eat(seaweedsList, null);
+        Inhabitant eatable = fish.eat(seaweedsList, dyingSeaweedsList);
         if (eatable != null) {
             System.out.println(fish.getName()
                     + " is eating a seaweed.");
-            if (eatable.getPv() < 1) {
+            if (eatable.isDying()) {
                 die(eatable);
             }
         } else {
@@ -118,7 +115,7 @@ public class Aquarium {
                     + " wants to eat is " + eatable.getName());
             // die(eatable);
            // dyingFishesList.add(eatable);
-             if (eatable.getPv() < 1) {
+             if (eatable.isDying()) {
                 die(eatable);
             }
         } else {

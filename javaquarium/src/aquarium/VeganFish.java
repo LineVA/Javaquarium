@@ -25,15 +25,21 @@ public class VeganFish extends Fish {
 
     public Inhabitant eat(ArrayList<Inhabitant> inList, ArrayList<Inhabitant> dying) {
         // A vegan fish cannot eat if there is no seaweed in the aquarium
-        if (inList.isEmpty()) {
+        // or all of them are dying
+        if (inList.isEmpty() || dying.size() == inList.size()) {
             return null;
         } else {
             int iEatable = super.getRandom().nextInt(inList.size());
+            // We check if the eatable seaweed is not dying 
             Inhabitant eatable = inList.get(iEatable);
-            eatable.eaten();
+            if (!eatable.isDying()) {
+                eatable.eaten();
             this.setPv(this.getPv() + 3);
             return eatable;
-           // return inList.get(iEatable);
+            // If the seaweed is dying, we need to choose a new one
+            } else {
+                return eat(inList, dying);
+            }
         }
     }
 

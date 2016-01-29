@@ -51,6 +51,10 @@ public abstract class Fish extends Inhabitant {
     public void newTurn(){
             this.setPv(this.getPv() - 1);
     }
+
+    public boolean isHungry(){
+        return this.getPv()<6;
+    }
     
     public void eaten(){
         this.setPv(this.getPv() - 4);
