@@ -6,6 +6,7 @@
 package tests;
 
 import aquarium.Aquarium;
+import aquarium.Play;
 import aquarium.Sex;
 import aquarium.VeganFish;
 
@@ -21,7 +22,7 @@ public class _002_veganAquarium {
         VeganFish vegan = new VeganFish("Vegan", Sex.FEMALE);
         aquarium.addFish(vegan);
 
-            aquarium.oneTurn();
+        Play play = new Play(aquarium);
 
     }
 

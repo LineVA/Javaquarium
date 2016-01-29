@@ -7,6 +7,7 @@ package tests;
 
 import aquarium.Aquarium;
 import aquarium.CarnivorousFish;
+import aquarium.Play;
 import aquarium.Sex;
 
 /**
@@ -23,7 +24,7 @@ public class _003_carnivorousAquarium {
         CarnivorousFish carni2 = new CarnivorousFish("Carni2", Sex.MALE);
         aquarium.addFish(carni2);
 
-           aquarium.oneTurn();
+        Play play = new Play(aquarium);
 
     }
 

@@ -20,12 +20,11 @@ public class Javaquarium {
         Fish fish2 = new CarnivorousFish("Miam", Sex.FEMALE);
         Seaweed weed = new Seaweed();
 
-        aquarium.addFish(fish1);
         aquarium.addFish(fish2);
+        aquarium.addFish(fish1);
         aquarium.addSeaweed(weed);
 
-        aquarium.visualize();
-        aquarium.oneTurn();
+        Play play = new Play(aquarium);
 
     }
 
