@@ -1,0 +1,18 @@
+List of the tests :
+
+_001_emptyAquarium       : an aquarium with no seaweed and no fish
+                             we visualize and meal it.
+
+_002_veganAquarium       : an aquarium with only one vegetarian fish
+                            we visualize and meal it.
+                            It cannot feed itself.
+
+_003_carnivorousAquarium : an aquarium with only one carnivorous fish
+                            we visualize and meal it.
+                            It cannot feed itself beacause it cannot eat itself.
+
+_004_variousAquarium     : an aquarium with only one carnivorous and 
+                          two vegetarian fishes  and five seaweeds
+                            we visualize and meal it.
+                            The carnivorous can eat twice, a vegan only once, 
+                            
