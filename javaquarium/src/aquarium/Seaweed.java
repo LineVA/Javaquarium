@@ -11,8 +11,8 @@ package aquarium;
  */
 public class Seaweed extends Inhabitant {
     
-    public Seaweed(){
-      super();
+    public Seaweed(int age){
+      super(age);
     }
     
     @Override
@@ -23,6 +23,11 @@ public class Seaweed extends Inhabitant {
     @Override
     public void newTurn() {
         this.setPv(this.getPv() + 1);
+    }
+
+    @Override
+    public void eaten() {
+        this.setPv(this.getPv() - 2);
     }
     
 }

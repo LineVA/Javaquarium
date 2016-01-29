@@ -13,10 +13,17 @@ import java.util.Iterator;
  */
 public class Play {
 
-    private Aquarium aquarium;
+    private final Aquarium aquarium;
 
-    public Play(Aquarium aquarium) {
+    public Play(Aquarium aquarium, int turn) {
         this.aquarium = aquarium;
+        oneTurn(true);
+        int i = 1;
+        while (i < turn) { 
+            System.out.println("########## TURN N°"+i+" ##########");
+            oneTurn(false);
+            i++;
+        }
     }
 
     private void meal() {
@@ -25,7 +32,7 @@ public class Play {
         Fish fish;
         while (itFishes.hasNext()) {
             fish = (Fish) itFishes.next();
-            if (!this.aquarium.isDying(fish)) {
+            if (!this.aquarium.isDying(fish) && fish.getPv() < 6) {
                 if (fish.isVegan()) {
                     this.aquarium.eatVegan(fish);
                 } else if (fish.isCarnivorous()) {
@@ -56,7 +63,6 @@ public class Play {
     }
 
     public void beginNewTurn() {
-        System.out.println("--------- NEW TURN ----------");
         Iterator itFishes = this.aquarium.getFishesList().iterator();
         Fish fish;
         while (itFishes.hasNext()) {
@@ -77,10 +83,11 @@ public class Play {
         }
     }
 
-    public void oneTurn() {
-        beginNewTurn();
-        beginNewTurn();
-        beginNewTurn();
+    public void oneTurn(boolean first) {
+        if (!first) {
+            beginNewTurn();
+        }
+        visualize();
         meal();
         visualize();
     }

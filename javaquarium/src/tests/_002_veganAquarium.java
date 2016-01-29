@@ -19,10 +19,10 @@ public class _002_veganAquarium {
 
     public static void main(String[] args) {
         Aquarium aquarium = new Aquarium();
-        VeganFish vegan = new VeganFish("Vegan", Sex.FEMALE);
+        VeganFish vegan = new VeganFish("Vegan", Sex.FEMALE, 0);
         aquarium.addFish(vegan);
 
-        Play play = new Play(aquarium);
+        Play play = new Play(aquarium, 10);
 
     }
 

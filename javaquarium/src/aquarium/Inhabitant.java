@@ -12,9 +12,11 @@ package aquarium;
 public abstract class Inhabitant extends Aquarium{
     
    private int pv;
+   private int age;
    
-   public Inhabitant(){
+   public Inhabitant(int age){
        this.pv = 10;
+       this.age = age;
    }
     
     public int getPv() {
@@ -25,5 +27,7 @@ public abstract class Inhabitant extends Aquarium{
         this.pv = pv;
     }
     
-    public abstract void newTurn(); 
+    public abstract void newTurn();
+    
+    public abstract void eaten();
 }

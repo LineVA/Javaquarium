@@ -20,14 +20,14 @@ public class _004_variousAquarium {
 
     public static void main(String[] args) {
         Aquarium aquarium = new Aquarium();
-        CarnivorousFish carni = new CarnivorousFish("Carni", Sex.MALE);
+        CarnivorousFish carni = new CarnivorousFish("Carni", Sex.MALE, 0);
         aquarium.addFish(carni);
-        VeganFish vegan = new VeganFish("Vegan", Sex.MALE);
+        VeganFish vegan = new VeganFish("Vegan", Sex.MALE, 0);
         aquarium.addFish(vegan);
-        VeganFish vegan2 = new VeganFish("Vegan2", Sex.MALE);
+        VeganFish vegan2 = new VeganFish("Vegan2", Sex.MALE, 0);
         aquarium.addFish(vegan2);
 
-        Play play = new Play(aquarium);
+        Play play = new Play(aquarium, 10);
     }
 
 }

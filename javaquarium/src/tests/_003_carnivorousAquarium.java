@@ -19,12 +19,12 @@ public class _003_carnivorousAquarium {
 
     public static void main(String[] args) {
         Aquarium aquarium = new Aquarium();
-        CarnivorousFish carni = new CarnivorousFish("Carni", Sex.MALE);
+        CarnivorousFish carni = new CarnivorousFish("Carni", Sex.MALE, 0);
         aquarium.addFish(carni);
-        CarnivorousFish carni2 = new CarnivorousFish("Carni2", Sex.MALE);
+        CarnivorousFish carni2 = new CarnivorousFish("Carni2", Sex.MALE, 0);
         aquarium.addFish(carni2);
 
-        Play play = new Play(aquarium);
+        Play play = new Play(aquarium, 10);
 
     }
 

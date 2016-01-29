@@ -16,8 +16,8 @@ public abstract class Fish extends Inhabitant {
     private String name;
     private Sex sex;
 
-    public Fish(String name, Sex sex) {
-        super();
+    public Fish(String name, Sex sex, int age) {
+        super(age);
         this.name = name;
         this.sex = sex;
     }
@@ -50,6 +50,10 @@ public abstract class Fish extends Inhabitant {
     
     public void newTurn(){
             this.setPv(this.getPv() - 1);
+    }
+    
+    public void eaten(){
+        this.setPv(this.getPv() - 4);
     }
 
 }

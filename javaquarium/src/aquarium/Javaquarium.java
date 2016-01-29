@@ -16,15 +16,15 @@ public class Javaquarium {
      */
     public static void main(String[] args) {
         Aquarium aquarium = new Aquarium();
-        Fish fish1 = new VeganFish("Coco", Sex.MALE);
-        Fish fish2 = new CarnivorousFish("Miam", Sex.FEMALE);
-        Seaweed weed = new Seaweed();
+        Fish fish1 = new VeganFish("Coco", Sex.MALE, 0);
+        Fish fish2 = new CarnivorousFish("Miam", Sex.FEMALE, 0);
+        Seaweed weed = new Seaweed(0);
 
-        aquarium.addFish(fish2);
         aquarium.addFish(fish1);
+        aquarium.addFish(fish2);
         aquarium.addSeaweed(weed);
 
-        Play play = new Play(aquarium);
+        Play play = new Play(aquarium, 10);
 
     }
 

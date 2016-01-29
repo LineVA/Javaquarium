@@ -18,7 +18,7 @@ public class _001_emptyAquarium {
     public static void main(String[] args) {
         Aquarium aquarium = new Aquarium();
 
-        Play play = new Play(aquarium);
+        Play play = new Play(aquarium, 10);
     }
 
 }

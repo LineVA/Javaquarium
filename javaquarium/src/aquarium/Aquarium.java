@@ -66,8 +66,6 @@ public class Aquarium {
     public void setDyingSeaweedsList(ArrayList<Inhabitant> dyingSeaweedsList) {
         this.dyingSeaweedsList = dyingSeaweedsList;
     }
-    
-    
 
     public void addFish(Fish fish) {
         fishesList.add(fish);
@@ -104,7 +102,9 @@ public class Aquarium {
         if (eatable != null) {
             System.out.println(fish.getName()
                     + " is eating a seaweed.");
-            die(eatable);
+            if (eatable.getPv() < 1) {
+                die(eatable);
+            }
         } else {
             System.out.println(fish.getName()
                     + " has nothing to eat.");
@@ -117,7 +117,10 @@ public class Aquarium {
             System.out.println("The fish that " + fish.getName()
                     + " wants to eat is " + eatable.getName());
             // die(eatable);
-            dyingFishesList.add(eatable);
+           // dyingFishesList.add(eatable);
+             if (eatable.getPv() < 1) {
+                die(eatable);
+            }
         } else {
             System.out.println(fish.getName()
                     + " has nothing to eat.");

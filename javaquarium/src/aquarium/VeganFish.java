@@ -13,14 +13,14 @@ import java.util.ArrayList;
  */
 public class VeganFish extends Fish {
 
-    public VeganFish(String name, Sex sex) {
-        super(name, sex);
+    public VeganFish(String name, Sex sex, int age) {
+        super(name, sex, age);
     }
 
     @Override
     public String toString() {
         return "A fish named " + super.getName() + ", a " + super.getSex()
-                + ", vegetarian and has "+ this.getPv() + " PV.";
+                + ", vegetarian, with " + this.getPv() + " PV.";
     }
 
     public Inhabitant eat(ArrayList<Inhabitant> inList, ArrayList<Inhabitant> dying) {
@@ -29,13 +29,17 @@ public class VeganFish extends Fish {
             return null;
         } else {
             int iEatable = super.getRandom().nextInt(inList.size());
-            return inList.get(iEatable);
+            Inhabitant eatable = inList.get(iEatable);
+            eatable.eaten();
+            this.setPv(this.getPv() + 3);
+            return eatable;
+           // return inList.get(iEatable);
         }
     }
 
     @Override
     public void die() {
-        throw new UnsupportedOperationException("Not supported yet."); 
+        throw new UnsupportedOperationException("Not supported yet.");
 //To change body of generated methods, choose Tools | Templates.
     }
 

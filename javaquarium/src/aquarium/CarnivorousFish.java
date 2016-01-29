@@ -13,33 +13,19 @@ import java.util.ArrayList;
  */
 public class CarnivorousFish extends Fish {
 
-    public CarnivorousFish(String name, Sex sex) {
-        super(name, sex);
+    public CarnivorousFish(String name, Sex sex, int age) {
+        super(name, sex, age);
     }
 
     @Override
     public String toString() {
         return "A fish named " + super.getName() + ", a " + super.getSex()
-                + ", carnivorious and has "+ this.getPv() + " PV.";
+                + ", carnivorious, with "+ this.getPv() + " PV.";
     }
 
     public boolean equas(Fish fish){
         return fish.getName().equals(this.getName());
     }
-    
-//    @Override
-//    public boolean eat(Inhabitant eatable) {
-//        if(eatable instanceof Fish){
-//            if(eatable.equals(this)){
-//                return false;
-//            } else {
-//                System.out.println(this.getName() + " eats ");
-//                return true;
-//            }
-//        } else {
-//            return false;
-//        }
-//    }
 
    public Inhabitant eat(ArrayList<Inhabitant> inList, 
            ArrayList<Inhabitant> dying) {
@@ -55,6 +41,8 @@ public class CarnivorousFish extends Fish {
                 // So it needs to choose a new meal
                 return eat(inList, dying);
             } else {
+                eatable.eaten();
+                this.setPv(this.getPv() + 5);
                 return eatable;
             }
         }
