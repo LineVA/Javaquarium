@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author doyenm
  */
-public class CarnivorousFish extends Fish {
+public abstract class CarnivorousFish extends Fish {
 
     public CarnivorousFish(String name, Sex sex, int age) {
         super(name, sex, age);

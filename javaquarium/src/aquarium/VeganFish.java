@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author doyenm
  */
-public class VeganFish extends Fish {
+public abstract class VeganFish extends Fish {
 
     public VeganFish(String name, Sex sex, int age) {
         super(name, sex, age);

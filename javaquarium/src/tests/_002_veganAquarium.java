@@ -8,6 +8,7 @@ package tests;
 import aquarium.Aquarium;
 import aquarium.Play;
 import aquarium.Sex;
+import aquarium.Sole;
 import aquarium.VeganFish;
 
 /**
@@ -19,7 +20,7 @@ public class _002_veganAquarium {
 
     public static void main(String[] args) {
         Aquarium aquarium = new Aquarium();
-        VeganFish vegan = new VeganFish("Vegan", Sex.FEMALE, 0);
+        VeganFish vegan = new Sole("Vegan", Sex.FEMALE, 0);
         aquarium.addFish(vegan);
 
         Play play = new Play(aquarium, 10);
