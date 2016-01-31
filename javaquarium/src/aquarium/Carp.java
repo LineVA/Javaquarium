@@ -15,4 +15,10 @@ public class Carp extends VeganFish{
         super(name, sex, age);
     }
     
+     @Override
+    public String toString() {
+        return "A carp named " + super.getName() + ", a " + super.getSex()
+                + ", vegetarian, with " + this.getPv() + " PV.";
+    }
+    
 }

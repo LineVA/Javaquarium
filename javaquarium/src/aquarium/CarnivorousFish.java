@@ -17,11 +17,7 @@ public abstract class CarnivorousFish extends Fish {
         super(name, sex, age);
     }
 
-    @Override
-    public String toString() {
-        return "A fish named " + super.getName() + ", a " + super.getSex()
-                + ", carnivorious, with "+ this.getPv() + " PV.";
-    }
+ 
 
     public boolean equas(Fish fish){
         return fish.getName().equals(this.getName());

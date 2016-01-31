@@ -17,11 +17,7 @@ public abstract class VeganFish extends Fish {
         super(name, sex, age);
     }
 
-    @Override
-    public String toString() {
-        return "A fish named " + super.getName() + ", a " + super.getSex()
-                + ", vegetarian, with " + this.getPv() + " PV.";
-    }
+   
 
     public Inhabitant eat(ArrayList<Inhabitant> inList, ArrayList<Inhabitant> dying) {
         // A vegan fish cannot eat if there is no seaweed in the aquarium

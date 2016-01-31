@@ -14,5 +14,10 @@ public class Sole extends VeganFish{
     public Sole(String name, Sex sex, int age) {
         super(name, sex, age);
     }
-    
+
+   @Override
+    public String toString() {
+        return "A sole named " + super.getName() + ", a " + super.getSex()
+                + ", vegetarian, with " + this.getPv() + " PV.";
+    }
 }

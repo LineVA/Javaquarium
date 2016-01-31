@@ -15,4 +15,9 @@ public class Bass extends VeganFish{
         super(name, sex, age);
     }
     
+     @Override
+    public String toString() {
+        return "A bass named " + super.getName() + ", a " + super.getSex()
+                + ", vegetarian, with " + this.getPv() + " PV.";
+    }
 }
