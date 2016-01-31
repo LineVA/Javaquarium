@@ -1,0 +1,18 @@
+Part 2.1 : 
+Vegan and carnivorous can eat
+If they have nothing to eat
+if they can only eat themselves
+seaweeds can die
+vegans can die
+carnivorous can die
+
+
+Adding of the races:
+	Vegan and carnivorous become abstract
+	The races are not abstract
+	ToString
+	isRace
+
+A fish can not eat itself
+A fish can not eat a fish of the same race
+If it chooses itself or a fish of the same race, it can not choose another one
