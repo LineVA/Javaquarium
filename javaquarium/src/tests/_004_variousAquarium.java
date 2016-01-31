@@ -7,8 +7,10 @@ package tests;
 
 import aquarium.Aquarium;
 import aquarium.CarnivorousFish;
+import aquarium.Clown;
 import aquarium.Play;
 import aquarium.Sex;
+import aquarium.Sole;
 import aquarium.VeganFish;
 
 /**
@@ -20,11 +22,11 @@ public class _004_variousAquarium {
 
     public static void main(String[] args) {
         Aquarium aquarium = new Aquarium();
-        CarnivorousFish carni = new CarnivorousFish("Carni", Sex.MALE, 0);
+        CarnivorousFish carni = new Clown("Carni", Sex.MALE, 0);
         aquarium.addFish(carni);
-        VeganFish vegan = new VeganFish("Vegan", Sex.MALE, 0);
+        VeganFish vegan = new Sole("Vegan", Sex.MALE, 0);
         aquarium.addFish(vegan);
-        VeganFish vegan2 = new VeganFish("Vegan2", Sex.MALE, 0);
+        VeganFish vegan2 = new Sole("Vegan2", Sex.MALE, 0);
         aquarium.addFish(vegan2);
 
         Play play = new Play(aquarium, 10);
