@@ -18,6 +18,6 @@ public class Tuna extends CarnivorousFish{
        @Override
     public String toString() {
         return "A tuna named " + super.getName() + ", a " + super.getSex()
-                + ", carnivorious, with "+ this.getPv() + " PV.";
+                + ", carnivorious, with "+ this.getPv() + " PV and aged of "+ this.getAge() + " years.";
     }
 }

@@ -70,7 +70,7 @@ public class Play {
         while (itFishes.hasNext()) {
             fish = (Fish) itFishes.next();
             fish.newTurn();
-            if (fish.getPv() < 1) {
+            if (fish.isDying()) {
                 itFishes.remove();
             }
         }
@@ -79,7 +79,7 @@ public class Play {
         while (itWeeds.hasNext()) {
             weed = (Seaweed) itWeeds.next();
             weed.newTurn();
-            if (weed.getPv() < 1) {
+            if (weed.isDying()) {
                 itWeeds.remove();
             }
         }

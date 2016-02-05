@@ -19,7 +19,7 @@ public class Clown extends CarnivorousFish{
      @Override
     public String toString() {
         return "A clown fish named " + super.getName() + ", a " + super.getSex()
-                + ", carnivorous, with " + this.getPv() + " PV.";
+                + ", carnivorous, with " + this.getPv() + " PV and aged of "+ this.getAge() + " years.";
     }
     
 }

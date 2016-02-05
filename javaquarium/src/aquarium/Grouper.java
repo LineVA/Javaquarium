@@ -18,7 +18,7 @@ public class Grouper extends CarnivorousFish{
        @Override
     public String toString() {
         return "A grouper named " + super.getName() + ", a " + super.getSex()
-                + ", carnivorious, with "+ this.getPv() + " PV.";
+                + ", carnivorious, with "+ this.getPv() + " PVand aged of "+ this.getAge() + " years.";
     }
     
 }

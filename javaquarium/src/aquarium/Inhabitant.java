@@ -16,7 +16,7 @@ public abstract class Inhabitant extends Aquarium{
    
    public Inhabitant(int age){
        this.pv = 10;
-       this.age = age;
+       this.age = 0;
    }
     
     public int getPv() {
@@ -26,9 +26,17 @@ public abstract class Inhabitant extends Aquarium{
     public void setPv(int pv) {
         this.pv = pv;
     }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
     
     public boolean isDying(){
-        return (this.pv<1) || this.age>19;
+        return (this.pv<1) || (this.age>19);
     }
     
     public abstract void newTurn();

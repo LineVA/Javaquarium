@@ -18,7 +18,7 @@ public class Carp extends VeganFish{
      @Override
     public String toString() {
         return "A carp named " + super.getName() + ", a " + super.getSex()
-                + ", vegetarian, with " + this.getPv() + " PV.";
+                + ", vegetarian, with " + this.getPv() + " PV and aged of "+ this.getAge() + " years.";
     }
     
 }

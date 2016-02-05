@@ -17,12 +17,13 @@ public class Seaweed extends Inhabitant {
     
     @Override
     public String toString(){
-        return "A seaweed with "+ this.getPv() + " PV.";
+        return "A seaweed with "+ this.getPv() + " PV and aged of "+ this.getAge() + " years.";
     }
 
     @Override
     public void newTurn() {
         this.setPv(this.getPv() + 1);
+        this.setAge(this.getAge() + 1);
     }
 
     @Override
