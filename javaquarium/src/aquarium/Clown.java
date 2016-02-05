@@ -16,6 +16,7 @@ public class Clown extends Fish{
     public Clown(String name, Sex sex, int age) {
         super(name, sex, age);
         super.setFeedingPattern(new Carnivorous());
+        super.setSexualityPattern(new Hermaphrodite());
     }
     
     

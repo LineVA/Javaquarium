@@ -14,6 +14,7 @@ public class Tuna extends Fish {
     public Tuna(String name, Sex sex, int age) {
         super(name, sex, age);
         super.setFeedingPattern(new Carnivorous());
+        super.setSexualityPattern(new MonoGendered());
     }
 
     @Override

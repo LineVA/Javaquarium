@@ -14,6 +14,7 @@ public class Sole extends Fish {
     public Sole(String name, Sex sex, int age) {
         super(name, sex, age);
         super.setFeedingPattern(new Vegetarian());
+        super.setSexualityPattern(new HermaphroditeByAge());
     }
 
     @Override

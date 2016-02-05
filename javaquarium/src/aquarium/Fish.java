@@ -16,6 +16,7 @@ public abstract class Fish extends Inhabitant {
     private String name;
     private Sex sex;
     private FeedingPattern feedingPattern;
+    private SexualityPattern sexualityPattern;
 
     public Fish(String name, Sex sex, int age) {
         super(age);
@@ -45,6 +46,14 @@ public abstract class Fish extends Inhabitant {
 
     public void setFeedingPattern(FeedingPattern feedingPattern) {
         this.feedingPattern = feedingPattern;
+    }
+
+    public SexualityPattern getSexualityPattern() {
+        return sexualityPattern;
+    }
+
+    public void setSexualityPattern(SexualityPattern sexualityPattern) {
+        this.sexualityPattern = sexualityPattern;
     }
     
     

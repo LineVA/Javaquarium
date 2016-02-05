@@ -16,6 +16,7 @@ public class Grouper extends Fish{
     public Grouper(String name, Sex sex, int age) {
         super(name, sex, age);    
         super.setFeedingPattern(new Carnivorous());
+        super.setSexualityPattern(new HermaphroditeByAge());
     }
     
        @Override
