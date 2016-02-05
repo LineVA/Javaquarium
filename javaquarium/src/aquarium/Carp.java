@@ -9,10 +9,12 @@ package aquarium;
  *
  * @author doyenm
  */
-public class Carp extends VeganFish{
+public class Carp extends Fish{
 
     public Carp(String name, Sex sex, int age) {
         super(name, sex, age);
+            super.setFeedingPattern(new Vegetarian());
+
     }
     
      @Override

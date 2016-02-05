@@ -12,7 +12,7 @@ import java.util.Random;
  *
  * @author doyenm
  */
-public interface FeedingPattern {
+public interface FeedingPattern{
 
     public Inhabitant eat(Fish fish, ArrayList<Inhabitant> inList,
             ArrayList<Inhabitant> dying);
@@ -66,4 +66,45 @@ class Carnivorous implements FeedingPattern {
         return true;
     }
 
+}
+
+class Vegetarian implements FeedingPattern{
+
+    private Random random;
+
+    public Vegetarian() {
+        this.random = new Random();
+    }
+    
+    @Override
+    public Inhabitant eat(Fish fish, ArrayList<Inhabitant> inList, ArrayList<Inhabitant> dying) {
+         // A vegan fish cannot eat if there is no seaweed in the aquarium
+        // or all of them are dying
+        if (inList.isEmpty() || dying.size() == inList.size()) {
+            return null;
+        } else {
+            int iEatable = random.nextInt(inList.size());
+            // We check if the eatable seaweed is not dying 
+            Inhabitant eatable = inList.get(iEatable);
+            if (!eatable.isDying()) {
+                eatable.eaten();
+            fish.setPv(fish.getPv() + 3);
+            return eatable;
+            // If the seaweed is dying, we need to choose a new one
+            } else {
+                return eat(fish, inList, dying);
+            }
+        }
+    }
+
+    @Override
+    public boolean isVegan() {
+        return true;
+    }
+
+    @Override
+    public boolean isCarnivorous() {
+        return false;
+    }
+    
 }

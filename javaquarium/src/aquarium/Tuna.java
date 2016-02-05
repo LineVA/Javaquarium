@@ -9,15 +9,16 @@ package aquarium;
  *
  * @author doyenm
  */
-public class Tuna extends Fish{
+public class Tuna extends Fish {
 
     public Tuna(String name, Sex sex, int age) {
         super(name, sex, age);
+        super.setFeedingPattern(new Carnivorous());
     }
-    
-       @Override
+
+    @Override
     public String toString() {
         return "A tuna named " + super.getName() + ", a " + super.getSex()
-                + ", carnivorious, with "+ this.getPv() + " PV and aged of "+ this.getAge() + " years.";
+                + ", carnivorious, with " + this.getPv() + " PV and aged of " + this.getAge() + " years.";
     }
 }

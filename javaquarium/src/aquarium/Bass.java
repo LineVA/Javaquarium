@@ -9,15 +9,16 @@ package aquarium;
  *
  * @author doyenm
  */
-public class Bass extends VeganFish{
+public class Bass extends Fish {
 
     public Bass(String name, Sex sex, int age) {
         super(name, sex, age);
+        super.setFeedingPattern(new Vegetarian());
     }
-    
-     @Override
+
+    @Override
     public String toString() {
         return "A bass named " + super.getName() + ", a " + super.getSex()
-                + ", vegetarian, with " + this.getPv() + " PV and aged of "+ this.getAge() + " years.";
+                + ", vegetarian, with " + this.getPv() + " PV and aged of " + this.getAge() + " years.";
     }
 }
