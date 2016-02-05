@@ -12,7 +12,7 @@ import java.util.Random;
  *
  * @author doyenm
  */
-public interface FeedingPattern{
+public interface FeedingPattern {
 
     public Inhabitant eat(Fish fish, ArrayList<Inhabitant> inList,
             ArrayList<Inhabitant> dying);
@@ -33,7 +33,7 @@ class Carnivorous implements FeedingPattern {
 
     @Override
     public Inhabitant eat(Fish fish, ArrayList<Inhabitant> inList, ArrayList<Inhabitant> dying) {
-         // A carnivorous fish cannot eat if it is the only fish in the aquarium
+        // A carnivorous fish cannot eat if it is the only fish in the aquarium
         // Or if all the other fishes are dying
         if (inList.size() == 1 || inList.size() == dying.size() + 1) {
             return null;
@@ -51,6 +51,9 @@ class Carnivorous implements FeedingPattern {
             } else {
                 eatable.eaten();
                 fish.setPv(fish.getPv() + 5);
+                Fish eatableFish = (Fish) eatable;
+                System.out.println("The fish that " + fish.getName()
+                        + " wants to eat is " + eatableFish.getName());
                 return eatable;
             }
         }
@@ -68,17 +71,17 @@ class Carnivorous implements FeedingPattern {
 
 }
 
-class Vegetarian implements FeedingPattern{
+class Vegetarian implements FeedingPattern {
 
     private Random random;
 
     public Vegetarian() {
         this.random = new Random();
     }
-    
+
     @Override
     public Inhabitant eat(Fish fish, ArrayList<Inhabitant> inList, ArrayList<Inhabitant> dying) {
-         // A vegan fish cannot eat if there is no seaweed in the aquarium
+        // A vegan fish cannot eat if there is no seaweed in the aquarium
         // or all of them are dying
         if (inList.isEmpty() || dying.size() == inList.size()) {
             return null;
@@ -87,10 +90,12 @@ class Vegetarian implements FeedingPattern{
             // We check if the eatable seaweed is not dying 
             Inhabitant eatable = inList.get(iEatable);
             if (!eatable.isDying()) {
+                System.out.println(fish.getName()
+                        + " eats a seaweed.");
                 eatable.eaten();
-            fish.setPv(fish.getPv() + 3);
-            return eatable;
-            // If the seaweed is dying, we need to choose a new one
+                fish.setPv(fish.getPv() + 3);
+                return eatable;
+                // If the seaweed is dying, we need to choose a new one
             } else {
                 return eat(fish, inList, dying);
             }
@@ -106,5 +111,5 @@ class Vegetarian implements FeedingPattern{
     public boolean isCarnivorous() {
         return false;
     }
-    
+
 }

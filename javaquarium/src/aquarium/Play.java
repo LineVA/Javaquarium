@@ -28,21 +28,22 @@ public class Play {
 
     private void meal() {
         System.out.println("---------- MEAL ----------");
-        Iterator itFishes = this.aquarium.getFishesList().iterator();
-        Fish fish;
-        while (itFishes.hasNext()) {
-            fish = (Fish) itFishes.next();
-            // Before eating, we must cj=heck if it is not dying and if it is 
-            // hungry
-            if (!fish.isDying() && fish.isHungry()) {
-                if (fish.isVegan()) {
-                    this.aquarium.eatVegan(fish);
-                } else if (fish.isCarnivorous()) {
-                    this.aquarium.eatCarnivorous(fish);
-                }
-            }
-        }
-        this.aquarium.die();
+//        Iterator itFishes = this.aquarium.getFishesList().iterator();
+//        Fish fish;
+//        while (itFishes.hasNext()) {
+//            fish = (Fish) itFishes.next();
+//            // Before eating, we must cj=heck if it is not dying and if it is 
+//            // hungry
+//            if (!fish.isDying() && fish.isHungry()) {
+//                if (fish.isVegan()) {
+//                    this.aquarium.eatVegan(fish);
+//                } else if (fish.isCarnivorous()) {
+//                    this.aquarium.eatCarnivorous(fish);
+//                }
+//            }
+//        }
+//        this.aquarium.die();
+        this.aquarium.meal();
     }
 
     public void visualize() {

@@ -78,7 +78,7 @@ public class Aquarium {
     private void die(Inhabitant in) {
         if (in instanceof Seaweed) {
             dyingSeaweedsList.add(in);
-        } else if(in instanceof Fish){
+        } else if (in instanceof Fish) {
             dyingFishesList.add(in);
         }
     }
@@ -113,15 +113,44 @@ public class Aquarium {
         if (eatable != null) {
             System.out.println("The fish that " + fish.getName()
                     + " wants to eat is " + eatable.getName());
-            // die(eatable);
-           // dyingFishesList.add(eatable);
-             if (eatable.isDying()) {
+            if (eatable.isDying()) {
                 die(eatable);
             }
         } else {
             System.out.println(fish.getName()
                     + " has nothing to eat.");
         }
+    }
+
+    public void meal() {
+        Iterator itFishes = this.getFishesList().iterator();
+        Fish fish;
+        Inhabitant eatable = null;
+        while (itFishes.hasNext()) {
+            fish = (Fish) itFishes.next();
+            // Before eating, we must cj=heck if it is not dying and if it is 
+            // hungry
+            if (!fish.isDying() && fish.isHungry()) {
+                if (fish.isVegan()) {
+                    eatable = fish.eat(seaweedsList, dyingSeaweedsList);
+//    this.eatVegan(fish);
+                } else if (fish.isCarnivorous()) {
+                    eatable = fish.eat(fishesList, dyingFishesList);
+//       this.eatCarnivorous(fish);
+                }
+                if (eatable != null) {
+//                    System.out.println("The fish that " + fish.getName()
+//                            + " wants to eat is " + eatable.getName());
+                    if (eatable.isDying()) {
+                        die(eatable);
+                    }
+                } else {
+                    System.out.println(fish.getName()
+                            + " has nothing to eat.");
+                }
+            }
+        }
+        this.die();
     }
 
 }
