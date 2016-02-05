@@ -15,6 +15,7 @@ public abstract class Fish extends Inhabitant {
 
     private String name;
     private Sex sex;
+    private FeedingPattern feedingPattern;
 
     public Fish(String name, Sex sex, int age) {
         super(age);
@@ -38,15 +39,31 @@ public abstract class Fish extends Inhabitant {
         this.sex = sex;
     }
 
-    public abstract Inhabitant eat(ArrayList<Inhabitant> inList, ArrayList<Inhabitant> dying);
+    public FeedingPattern getFeedingPattern() {
+        return feedingPattern;
+    }
+
+    public void setFeedingPattern(FeedingPattern feedingPattern) {
+        this.feedingPattern = feedingPattern;
+    }
+    
+    
+
+    public Inhabitant eat(ArrayList<Inhabitant> inList, ArrayList<Inhabitant> dying){
+        return this.feedingPattern.eat(this, inList, dying);
+    }
 
     public abstract String toString();
 
-    public abstract void die();
+   // public abstract void die();
 
-    public abstract boolean isVegan();
+    public boolean isVegan(){
+        return this.feedingPattern.isVegan();
+    }
 
-    public abstract boolean isCarnivorous();
+    public boolean isCarnivorous(){
+        return this.feedingPattern.isCarnivorous();
+    }
 
     public void newTurn() {
         this.setPv(this.getPv() - 1);

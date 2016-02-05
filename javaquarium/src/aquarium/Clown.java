@@ -5,14 +5,17 @@
  */
 package aquarium;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author doyenm
  */
-public class Clown extends CarnivorousFish{
+public class Clown extends Fish{
 
     public Clown(String name, Sex sex, int age) {
         super(name, sex, age);
+        super.setFeedingPattern(new Carnivorous());
     }
     
     
@@ -21,5 +24,4 @@ public class Clown extends CarnivorousFish{
         return "A clown fish named " + super.getName() + ", a " + super.getSex()
                 + ", carnivorous, with " + this.getPv() + " PV and aged of "+ this.getAge() + " years.";
     }
-    
 }

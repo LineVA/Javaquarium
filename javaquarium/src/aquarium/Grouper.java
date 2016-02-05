@@ -5,14 +5,17 @@
  */
 package aquarium;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author doyenm
  */
-public class Grouper extends CarnivorousFish{
+public class Grouper extends Fish{
 
     public Grouper(String name, Sex sex, int age) {
-        super(name, sex, age);
+        super(name, sex, age);    
+        super.setFeedingPattern(new Carnivorous());
     }
     
        @Override
@@ -20,5 +23,4 @@ public class Grouper extends CarnivorousFish{
         return "A grouper named " + super.getName() + ", a " + super.getSex()
                 + ", carnivorious, with "+ this.getPv() + " PVand aged of "+ this.getAge() + " years.";
     }
-    
 }

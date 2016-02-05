@@ -9,7 +9,7 @@ package aquarium;
  *
  * @author doyenm
  */
-public class Tuna extends CarnivorousFish{
+public class Tuna extends Fish{
 
     public Tuna(String name, Sex sex, int age) {
         super(name, sex, age);
