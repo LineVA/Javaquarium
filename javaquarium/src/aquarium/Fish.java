@@ -47,17 +47,17 @@ public abstract class Fish extends Inhabitant {
     public abstract boolean isVegan();
 
     public abstract boolean isCarnivorous();
-    
-    public void newTurn(){
-         //   this.setPv(this.getPv() - 1);
-            this.setAge(this.getAge() + 1);
+
+    public void newTurn() {
+        this.setPv(this.getPv() - 1);
+        this.setAge(this.getAge() + 1);
     }
 
-    public boolean isHungry(){
-        return this.getPv()<6;
+    public boolean isHungry() {
+        return this.getPv() < 6;
     }
-    
-    public void eaten(){
+
+    public void eaten() {
         this.setPv(this.getPv() - 4);
     }
 
