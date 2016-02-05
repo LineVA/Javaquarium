@@ -25,7 +25,7 @@ public class _003_carnivorousAquarium {
         CarnivorousFish carni2 = new Clown("Carni2", Sex.MALE, 0);
   //      aquarium.addFish(carni2);
 
-        Play play = new Play(aquarium, 20);
+        Play play = new Play(aquarium, 30);
 
     }
 
