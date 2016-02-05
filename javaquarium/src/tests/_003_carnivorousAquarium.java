@@ -20,9 +20,9 @@ public class _003_carnivorousAquarium {
 
     public static void main(String[] args) {
         Aquarium aquarium = new Aquarium();
-        CarnivorousFish carni = new Clown("Carni", Sex.MALE, 0);
+        Clown carni = new Clown("Carni", Sex.MALE, 0);
         aquarium.addFish(carni);
-        CarnivorousFish carni2 = new Clown("Carni2", Sex.MALE, 0);
+        Clown carni2 = new Clown("Carni2", Sex.MALE, 0);
   //      aquarium.addFish(carni2);
 
         Play play = new Play(aquarium, 30);

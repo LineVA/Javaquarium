@@ -22,11 +22,11 @@ public class _004_variousAquarium {
 
     public static void main(String[] args) {
         Aquarium aquarium = new Aquarium();
-        CarnivorousFish carni = new Clown("Carni", Sex.MALE, 0);
+        Clown carni = new Clown("Carni", Sex.MALE, 0);
         aquarium.addFish(carni);
-        VeganFish vegan = new Sole("Vegan", Sex.MALE, 0);
+        Sole vegan = new Sole("Vegan", Sex.MALE, 0);
         aquarium.addFish(vegan);
-        VeganFish vegan2 = new Sole("Vegan2", Sex.MALE, 0);
+        Sole vegan2 = new Sole("Vegan2", Sex.MALE, 0);
         aquarium.addFish(vegan2);
 
         Play play = new Play(aquarium, 10);
